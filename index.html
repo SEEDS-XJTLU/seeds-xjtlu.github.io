@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.E.E.D.S. - Student Economics Exploration and Development Society</title>
+    <style>
+        :root {
+            --primary-color: #002b5c; /* XJTLU Navy Blue */
+            --accent-color: #e31837;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 2px; }
+        header p { margin: 10px 0 0; opacity: 0.9; font-style: italic; }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .advisors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .advisor-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .advisor-card:hover { transform: translateY(-5px); }
+        .advisor-card h3 { margin-top: 0; color: var(--primary-color); border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .advisor-card p { font-size: 0.95em; margin: 8px 0; }
+        .dept { font-weight: bold; color: #555; }
+        .edu { color: #777; font-size: 0.9em; }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #888;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>S.E.E.D.S.</h1>
+    <p>Student Economics Exploration and Development Society</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2 class="section-title">指导老师 | Faculty Advisors</h2>
+        <div class="advisors-grid">
+            
+            <div class="advisor-card">
+                <h3>Dr. Shuyang Si</h3>
+                <p class="dept">Dept. of Economics, IBSS, XJTLU</p>
+                <p class="edu">🎓 Ph.D. in Applied Econ. and Mgmt, Cornell University, US</p>
+            </div>
+
+            <div class="advisor-card">
+                <h3>Dr. Nakaya (Key) Kakuda</h3>
+                <p class="dept">Dept. of Intelligent Operations and Marketing, IBSS, XJTLU</p>
+                <p class="edu">🎓 Ph.D. in Marketing, City University of Hong Kong, HK (CN)</p>
+            </div>
+
+            <div class="advisor-card">
+                <h3>Dr. Jianwen (Levin) Zheng</h3>
+                <p class="dept">Dept. of Strategic Management and Organization, XJTLU</p>
+                <p class="edu">🎓 Ph.D. in Management Studies, University of Liverpool, UK</p>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 S.E.E.D.S. @ XJTLU. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
