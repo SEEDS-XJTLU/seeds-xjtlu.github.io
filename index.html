@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S.E.E.D.S. | Student Economics Exploration & Development Society</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
     <style>
+        /* === Global Variables & Resets === */
         :root {
-            --primary: #2E7D32; /* 深绿 - 象征学术扎根 */
-            --secondary: #66BB6A; /* 浅绿 - 象征新生和发展 */
+            --primary: #2E7D32; 
+            --secondary: #66BB6A; 
             --bg-color: #F8FAF8;
+            --bg-alt: #EEF2EE;
             --text-dark: #1A1A1A;
             --text-light: #555555;
             --white: #FFFFFF;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Outfit', sans-serif;
@@ -29,7 +28,7 @@
             scroll-behavior: smooth;
         }
 
-        /* 导航栏 */
+        /* === Navigation === */
         nav {
             position: fixed;
             top: 0;
@@ -52,19 +51,21 @@
             letter-spacing: 1px;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
-            margin-left: 2rem;
             font-weight: 600;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
+        .nav-links a:hover { color: var(--secondary); }
 
-        /* 首屏 (Hero Section) */
+        /* === Hero Section === */
         .hero {
             height: 100vh;
             display: flex;
@@ -115,10 +116,8 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        /* 通用区块设置 */
-        section {
-            padding: 5rem 10%;
-        }
+        /* === General Sections === */
+        section { padding: 6rem 10%; }
 
         .section-title {
             text-align: center;
@@ -139,7 +138,7 @@
             border-radius: 2px;
         }
 
-        /* About Section */
+        /* === About Section === */
         .about-content {
             background: var(--white);
             padding: 3rem;
@@ -172,7 +171,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Advisors Section */
+        /* === Advisors Section === */
         .advisors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -190,11 +189,8 @@
             border-top: 5px solid var(--primary);
         }
 
-        .advisor-card:hover {
-            transform: translateY(-5px);
-        }
+        .advisor-card:hover { transform: translateY(-5px); }
 
-        /* 模仿图片中的绿色圆形装饰 */
         .advisor-card::before {
             content: '';
             position: absolute;
@@ -208,10 +204,7 @@
             z-index: 0;
         }
 
-        .advisor-card * {
-            position: relative;
-            z-index: 1;
-        }
+        .advisor-card * { position: relative; z-index: 1; }
 
         .advisor-name {
             font-size: 1.5rem;
@@ -227,20 +220,9 @@
             font-style: italic;
         }
 
-        .advisor-focus {
-            margin-top: 1.5rem;
-        }
-
-        .advisor-focus h4 {
-            font-size: 1rem;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .advisor-focus ul {
-            list-style-type: none;
-        }
-
+        .advisor-focus { margin-top: 1.5rem; }
+        .advisor-focus h4 { font-size: 1rem; color: var(--text-dark); margin-bottom: 0.5rem; }
+        .advisor-focus ul { list-style-type: none; }
         .advisor-focus ul li {
             position: relative;
             padding-left: 1.2rem;
@@ -248,7 +230,6 @@
             color: var(--text-light);
             margin-bottom: 0.3rem;
         }
-
         .advisor-focus ul li::before {
             content: '•';
             color: var(--secondary);
@@ -257,12 +238,108 @@
             font-weight: bold;
         }
 
-        /* Team & Contact Section */
+        /* === SURF Section === */
+        #surf { background-color: var(--bg-alt); }
+        
+        .surf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .surf-advisor-column {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid #eef2ee;
+        }
+
+        .surf-header {
+            border-bottom: 3px solid var(--secondary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .surf-header h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .year-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .year-label.current {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .year-label:not(.current) {
+            background-color: #eee;
+            color: #777;
+        }
+
+        .project-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .project-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .project-item.active::before {
+            background-color: var(--secondary);
+            box-shadow: 0 0 8px var(--secondary);
+        }
+
+        .project-item.archive::before { background-color: #ccc; }
+
+        .p-title {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .p-year {
+            display: block;
+            font-size: 0.75rem;
+            color: #999;
+            font-weight: 700;
+        }
+
+        .placeholder-box {
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 3rem 1rem;
+            text-align: center;
+            color: #bbb;
+            font-style: italic;
+        }
+
+        /* === Team & Contact Section === */
         .bottom-sections {
             display: flex;
             flex-wrap: wrap;
             gap: 3rem;
-            padding: 0 10% 5rem 10%;
+            padding: 0 10% 6rem 10%;
         }
 
         .team-box, .contact-box {
@@ -282,19 +359,9 @@
             padding-bottom: 0.5rem;
         }
 
-        .team-member {
-            margin-bottom: 1rem;
-        }
-
-        .team-member strong {
-            display: block;
-            color: var(--text-dark);
-        }
-
-        .team-member span {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
+        .team-member { margin-bottom: 1rem; }
+        .team-member strong { display: block; color: var(--text-dark); }
+        .team-member span { font-size: 0.9rem; color: var(--text-light); }
 
         .contact-email {
             display: block;
@@ -307,15 +374,10 @@
             transition: background 0.3s;
         }
 
-        .contact-email:hover {
-            background: #e8f5e9;
-        }
+        .contact-email:hover { background: #e8f5e9; }
+        .contact-email span { color: var(--primary); font-weight: 600; font-size: 0.9rem;}
 
-        .contact-email span {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
+        /* === Footer === */
         footer {
             text-align: center;
             padding: 2rem;
@@ -324,12 +386,13 @@
             font-size: 0.9rem;
         }
 
-        /* 移动端适配 */
+        /* === Mobile Responsiveness === */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .hero h2 { font-size: 1.2rem; }
-            .nav-links { display: none; } /* 移动端可以考虑在此基础上添加汉堡菜单 */
-            section { padding: 3rem 5%; }
+            .nav-links { display: none; } /* Hide on very small screens for simplicity */
+            section { padding: 4rem 5%; }
+            .bottom-sections { padding: 0 5% 4rem 5%; }
         }
     </style>
 </head>
@@ -340,6 +403,7 @@
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#advisors">Advisory Team</a>
+            <a href="#surf">SURF Projects</a>
             <a href="#team">Leadership</a>
             <a href="#join">Join Us</a>
         </div>
@@ -357,7 +421,7 @@
     <section id="about">
         <h2 class="section-title">About Us</h2>
         <div class="about-content">
-            <p>The Student Economics Exploration & Development Society (S.E.E.D.S.) is a research-oriented student society. We accept both regular members and project members for different focuses and tasks.</p>
+            <p>The Student Economics Exploration & Development Society (S.E.E.D.S.) is a research-oriented student society dedicated to fostering intellectual curiosity, academic excellence, and professional growth in the field of economics and related disciplines. We accept both regular members and S.E.E.D.S. Project members for different focuses and tasks.</p>
             
             <div class="aims-grid">
                 <div class="aim-card">
@@ -370,7 +434,7 @@
                 </div>
                 <div class="aim-card">
                     <h4>S.E.E.D.S. Project</h4>
-                    <p>Driving deep-dive research initiatives and hands-on economic analysis.</p>
+                    <p>Driving deep-dive research initiatives and hands-on economic analysis to empower student researchers.</p>
                 </div>
             </div>
         </div>
@@ -431,6 +495,94 @@
         </div>
     </section>
 
+    <section id="surf">
+        <h2 class="section-title">SURF Projects</h2>
+        <p style="text-align: center; max-width: 800px; margin: -1.5rem auto 3rem auto; color: var(--text-light);">
+            The Summer Undergraduate Research Fellowship (SURF) is a cornerstone of our research culture. Below are the ongoing and past initiatives led by our advisors.
+        </p>
+
+        <div class="surf-grid">
+            
+            <div class="surf-advisor-column">
+                <div class="surf-header">
+                    <h3>Dr. Shuyang Si</h3>
+                </div>
+                
+                <div class="surf-list">
+                    <h5 class="year-label current">2026 Active</h5>
+                    <div class="project-item active">
+                        <span class="p-title">From Uniforms to 'Racer Suits': Analyzing the Role of Branding in Reducing Occupational Stigma and Enhancing Rider Performance</span>
+                    </div>
+                    <div class="project-item active">
+                        <span class="p-title">Local Brands, Foreign Faces: Measuring the Impact of Cultural Positioning on Chinese Consumer Choice</span>
+                    </div>
+                    <div class="project-item active">
+                        <span class="p-title">The AI-TCM Paradox: How Contextual Risk and Value Co-creation Shape Consumer Acceptance of AI in Traditional Chinese Medicine</span>
+                    </div>
+
+                    <h5 class="year-label">Research Archive</h5>
+                    <div class="project-item archive">
+                        <span class="p-year">SURF-2025</span>
+                        <span class="p-title">Economic Conditions and Consumer Preferences for Coffee: A Data-Driven Analysis of Flavor Trends in Suzhou</span>
+                    </div>
+                    <div class="project-item archive">
+                        <span class="p-year">SURF-2024</span>
+                        <span class="p-title">Consumption Downgrading? A Study on Consumer Behavior and Trends</span>
+                    </div>
+                    <div class="project-item archive">
+                        <span class="p-year">SURF-2023</span>
+                        <span class="p-title">Policy Effects on Real Estate Supply Behaviors – An Empirical Analysis Based On Suzhou</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="surf-advisor-column">
+                <div class="surf-header">
+                    <h3>Dr. Nakaya Kakuda</h3>
+                </div>
+                
+                <div class="surf-list">
+                    <h5 class="year-label current">2026 Active</h5>
+                    <div class="project-item active">
+                        <span class="p-title">When AI Speaks for Us: How Psychological Ownership and Cognitive Mechanisms Shape Online Communication</span>
+                    </div>
+                    <div class="project-item active">
+                        <span class="p-title">Consumers' Acceptance and Use of Agentic AI in Food-delivery Ordering</span>
+                    </div>
+                    <div class="project-item active">
+                        <span class="p-title">The Speed-Accuracy Trade-off in Real Life: How Time Pressure Reshapes High-Stakes Decisions</span>
+                    </div>
+
+                    <h5 class="year-label">Research Archive</h5>
+                    <div class="project-item archive">
+                        <span class="p-year">SURF-2025</span>
+                        <span class="p-title">Digitally Empowering Rural China: Technology Access, Usage, and Impact in the Context of Rural Revitalization</span>
+                    </div>
+                    <div class="project-item archive">
+                        <span class="p-year">SURF-2025</span>
+                        <span class="p-title">AI as the New Astrologer? A Comparative Analysis of Algorithmic vs. Traditional Fortune-Telling in Influencing Student Behavior</span>
+                    </div>
+                    <div class="project-item archive">
+                        <span class="p-year">SURF-2024</span>
+                        <span class="p-title">Can Your Smartphone Case Predict Your Consumption Preferences? Examining the Relationship Between Smartphone Cases and Personality Traits</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="surf-advisor-column">
+                <div class="surf-header">
+                    <h3>Dr. Jianwen Zheng</h3>
+                </div>
+                <div class="surf-list">
+                    <div class="placeholder-box">
+                        <p>Current & Past SURF Projects<br>Information Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <div class="bottom-sections">
         
         <div id="team" class="team-box">
@@ -455,4 +607,20 @@
             
             <a href="mailto:qingyue.meng22@student.xjtlu.edu.cn" class="contact-email">
                 <strong>Mr. Qingyue Meng</strong><br>
-                <span>qingyue.meng22@student.xjtlu.edu.cn
+                <span>qingyue.meng22@student.xjtlu.edu.cn</span>
+            </a>
+            
+            <a href="mailto:maowei.hua22@student.xjtlu.edu.cn" class="contact-email">
+                <strong>Mr. Maowei Hua</strong><br>
+                <span>maowei.hua22@student.xjtlu.edu.cn</span>
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Student Economics Exploration & Development Society (S.E.E.D.S.). All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
